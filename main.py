@@ -21,7 +21,7 @@ CAT_LABEL = 0
 DOG_LABEL = 1
 
 # the basepath of the training images. Make sure to have the data setup in the described way.
-base_path = 'resized/data'
+base_path = 'data'
 
 # Dimensions of the images. Preventing some magic numbers
 image_size_rows = 112
@@ -161,9 +161,78 @@ def cnn_model_fn(features, labels, mode):
     return tf.estimator.EstimatorSpec(
         mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
 
+
 def main(argv):
     args = parser.parse_args(argv[1:])
-    # TODO: Use the model here.
+
+    # TODO: change the model dir, if you want to start a new model
+    classifier = tf.estimator.Estimator(
+        model_fn=cnn_model_fn, model_dir='model/model_01')
+
+    if not args.no_train:
+        # train the model
+        print('Start training...')
+
+        classifier.train(
+            input_fn=lambda: get_dataset('train',
+                                         shuffle=True,
+                                         batch_size=args.batch_size,
+                                         repeat=True,
+                                         prefetch=500
+                                         ),
+            steps=args.train_steps)
+
+    # Evaluate the model. Use 5000 steps, as we have that many test images
+    eval_result = classifier.evaluate(
+        input_fn=lambda: get_dataset('test',
+                                     shuffle=False,
+                                     batch_size=100,
+                                     repeat=False,
+                                     prefetch=100
+                                     ),
+        steps=5000)
+
+    print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_result))
+
+    test_dataset = get_dataset('test',
+                               shuffle=True,
+                               batch_size=1,
+                               repeat=False,
+                               prefetch=1,
+                               buffer_size=5000
+                               ).make_one_shot_iterator()
+
+    next_batch = test_dataset.get_next()
+    while True:
+        try:
+            # TODO: This whole thing feels like an ugly hack. But works...
+            image = next_batch[0].eval()
+
+            predict_input_fn = tf.estimator.inputs.numpy_input_fn(
+                x=image,
+                num_epochs=1,
+                shuffle=False)
+
+            predictions = classifier.predict(input_fn=predict_input_fn)
+
+            prediction = predictions.__next__()
+
+            image = np.reshape(image, image.shape[-3:])
+
+            # Images have output values from 0-255, matplot expects values from 0-1
+            image = image / 255
+            plt.imshow(image)
+            plt.title('Predicted class: ' + str(prediction['classes']))
+            plt.show()
+            plt.waitforbuttonpress(timeout=1)
+
+            # if you use scientific mode of pycharm, this might not work. Feel free to find a solution.
+            # closes all plots to prevent OOM errors of pycharm.
+            plt.close('all')
+
+        except Exception as e:
+            print(e)
+            break
 
 
 if __name__ == '__main__':
@@ -172,14 +241,5 @@ if __name__ == '__main__':
     # os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
     sess = tf.Session()
     with sess.as_default():
-    #    tf.logging.set_verbosity(tf.logging.INFO)
-    #    tf.app.run(main)
-
-        # test pipeline
-        dataset = get_dataset().make_one_shot_iterator()
-        next_batch = dataset.get_next()
-        image = next_batch[0].eval()
-        image = np.resize(image, image.shape[-3:])
-        image = image / 255
-        plt.imshow(image)
-        plt.show()
+        tf.logging.set_verbosity(tf.logging.INFO)
+        tf.app.run(main)
