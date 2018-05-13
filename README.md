@@ -15,7 +15,7 @@ In that case, make sure, that everything is running as it should.
 Install all the requirements listet in `requirements.txt`. If you later on find some dependencies to be missing, feel free to install them.
 
 ## Step 1 - Download the data
-Visit [Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=54765) and download the dataset. Unpack it to the root of this directory, so that your folder structure looks like this:
+Visit [Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=54765) and download the dataset. Unpack it to somwhere. You will have to move files from this directory in the next step.
 
 ## Step 2 - Training Data vs Test Data
 The dataset does not come with separated training and test data. The separation of these two types of data is crucial, so do that now. Create a directory structure like this:
