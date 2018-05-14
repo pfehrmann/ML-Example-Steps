@@ -14,8 +14,8 @@ In that case, make sure, that everything is running as it should.
 
 
 You should use an IDE. I suggest using Pycharm, for me it is one of the best Python IDEs. To get the code either 
-- clone the project, so yu have the latest version or 
-- download the respective release, unzip it 
+- clone the project, so you have the latest and completed version or 
+- download the respective release and unzip it 
 
 Then open this cloned or unzipped folder with Pycharm, see [here](https://www.jetbrains.com/help/pycharm/opening-reopening-and-closing-projects.html) for details on opening projects with Pycharm. In Pycharm you may have to add the newly created conda environment. 
 
