@@ -13,7 +13,11 @@ You also may want to install tensorflow-gpu, if you have a GPU.
 In that case, make sure, that everything is running as it should.
 
 
-You should use an IDE. I suggest using Pycharm, for me it is one of the best Python IDEs. Clone the project or download the respective release, unzip it and open this folder with Pycharm, see [here](https://www.jetbrains.com/help/pycharm/opening-reopening-and-closing-projects.html) for details on opening projects with Pycharm. In Pycharm you may have to add the newly created conda environment. 
+You should use an IDE. I suggest using Pycharm, for me it is one of the best Python IDEs. To get the code either 
+- clone the project, so yu have the latest version or 
+- download the respective release, unzip it 
+
+Then open this cloned or unzipped folder with Pycharm, see [here](https://www.jetbrains.com/help/pycharm/opening-reopening-and-closing-projects.html) for details on opening projects with Pycharm. In Pycharm you may have to add the newly created conda environment. 
 
 Install all the requirements listet in `requirements.txt`. If you use Pycharm, open the requirements.txt file. Pycharm will analyze your installed packages in the conda environment and suggest to install the missing pakcgaes. If you later on find some dependencies to be missing, feel free to install them.
 
