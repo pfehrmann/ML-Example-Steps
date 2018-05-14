@@ -2,7 +2,7 @@
 This gives you the basic guidiance for what to do in the project. We have provided you with example projects for steps 3 to 5/6. Note that you will alyways have to do steps 0-2, to have your environment and data set up. Once you have setup your environment and data, feel free to copy the data to any downloaded project.
 
 ## Step 0 - Setup
-Install Anaconda for Windows. Create a new environment with `conda create -n tensorflow pip python=3.6 `.
+Install Anaconda 3.6 Version for Windows. When installing, make sure to check the "Add Anaconda to my PATH environment variable" and "Register Anaconda as my default Python 3.6". Create a new environment with `conda create -n tensorflow pip python=3.6 `.
 
 Install Tensorflow with
 ```
