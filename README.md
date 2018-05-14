@@ -1,5 +1,5 @@
 # DL Tutorial
-This gives you the basic guidiance for what to do in the project.
+This gives you the basic guidiance for what to do in the project. We have provided you with example projects for steps 3 to 5/6. Note that you will alyways have to do steps 0-2, to have your environment and data set up. Once you have setup your environment and data, feel free to copy the data to any downloaded project.
 
 ## Step 0 - Setup
 Install Anaconda for Windows. Create a new environment with `conda create -n tensorflow pip python=3.6 `.
@@ -12,7 +12,10 @@ See [Tensorflow](https://www.tensorflow.org/install/) for details.
 You also may want to install tensorflow-gpu, if you have a GPU. 
 In that case, make sure, that everything is running as it should.
 
-Install all the requirements listet in `requirements.txt`. If you later on find some dependencies to be missing, feel free to install them.
+
+You should use an IDE. I suggest using Pycharm, for me it is one of the best Python IDEs. Clone the project or download the respective release, unzip it and open this folder with Pycharm, see [here](https://www.jetbrains.com/help/pycharm/opening-reopening-and-closing-projects.html) for details on opening projects with Pycharm. In Pycharm you may have to add the newly created conda environment. 
+
+Install all the requirements listet in `requirements.txt`. If you use Pycharm, open the requirements.txt file. Pycharm will analyze your installed packages in the conda environment and suggest to install the missing pakcgaes. If you later on find some dependencies to be missing, feel free to install them.
 
 ## Step 1 - Download the data
 Visit [Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=54765) and download the dataset. Unpack it to somwhere. You will have to move files from this directory in the next step.
