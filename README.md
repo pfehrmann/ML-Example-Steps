@@ -72,6 +72,11 @@ For example, look for images with the index 666.
 Here you may want to process images with another python script first and the either write them to the disk and use the input pipeline or use the images in RAM as input. 
 This saves you from slow disk access.
 
+## Long learning times
+In case your learning takes forever, consider a few points:
+- Is your net to huge? Having many Convolution Layers with large inputs will slow down things a lot. Also notice, that Tensorflow offers profiling tools, you might want to use them. There are many different architectures, that can cope with limited resources, e.g. SqueezeNet (this actually would run on a Raspberry Pi :) )
+- Use Cloud Computing. If your computers hardware simply is not powerful enough, consider using cloud services. Take a look at FloydHub (easy to setup, 20h of CPU time for free) or AWS
+
 # Things to try
 Just a short list of things on my mind. Some relate to architecture others to preprocessing.
 - Spatial Pyramid Pooling
