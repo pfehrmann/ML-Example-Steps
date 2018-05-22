@@ -46,6 +46,8 @@ Then open this cloned or unzipped folder with Pycharm, see [here](https://www.je
 Install all the requirements listet in `requirements.txt`. If you use Pycharm, open the requirements.txt file. Pycharm will analyze your installed packages in the conda environment and suggest to install the missing pakcgaes. If you later on find some dependencies to be missing, feel free to install them.
 
 ## Step 1 - Download the data
+You can either follow the steps described for Step 1 and 2, or you can download the images from the [release of Step 3](https://github.com/pfehrmann/ML-Example-Steps/releases/download/step-3/data.zip). In that case, download and extract the files.
+
 Visit [Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=54765) and download the dataset. Unpack it to somwhere. You will have to move files from this directory in the next step.
 
 ## Step 2 - Training Data vs Test Data
