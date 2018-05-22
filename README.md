@@ -41,9 +41,12 @@ You should use an IDE. I suggest using Pycharm, for me it is one of the best Pyt
 - clone the project, so you have the latest and completed version or 
 - download the respective release and unzip it 
 
-Then open this cloned or unzipped folder with Pycharm, see [here](https://www.jetbrains.com/help/pycharm/opening-reopening-and-closing-projects.html) for details on opening projects with Pycharm. In Pycharm you may have to add the newly created conda environment. 
+Then open this cloned or unzipped folder with Pycharm, see [here](https://www.jetbrains.com/help/pycharm/opening-reopening-and-closing-projects.html) for details on opening projects with Pycharm. In Pycharm you may have to add the newly created conda environment. To do so, run the command ``conda env list`` and note down the path to the newly created environment ``tensorflow``. In PyCharm go to File > Settings > Project: \[Project name\] > Project Interpreter.  Then click the icon highlighted in this image: ![project_interpreter_settings](images/project_interpreter_settings.jpg)
 
-Install all the requirements listet in `requirements.txt`. If you use Pycharm, open the requirements.txt file. Pycharm will analyze your installed packages in the conda environment and suggest to install the missing pakcgaes. If you later on find some dependencies to be missing, feel free to install them.
+Then select Conda Environment and Existing Environment. As path choose the previously noted path to the conda environment. You have to select an executable, so select the ``python.exe`` in this folder.
+![add_conda](images/add_conda.jpg)
+
+Install all the requirements listet in `requirements.txt`. If you use Pycharm, open the requirements.txt file. PyCharm will analyze your installed packages in the conda environment and suggest to install the missing packages. If you later on find some dependencies to be missing, feel free to install them.
 
 ## Step 1 - Download the data
 You can either follow the steps described for Step 1 and 2, or you can download the images from the [release of Step 3](https://github.com/pfehrmann/ML-Example-Steps/releases/download/step-3/data.zip). In that case, download and extract the files.
@@ -51,6 +54,8 @@ You can either follow the steps described for Step 1 and 2, or you can download 
 Visit [Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=54765) and download the dataset. Unpack it to somwhere. You will have to move files from this directory in the next step.
 
 ## Step 2 - Training Data vs Test Data
+You can do this step manually or use the ``util.py`` script provided. 
+
 The dataset does not come with separated training and test data. The separation of these two types of data is crucial, so do that now. Create a directory structure like this:
 ```
 .
