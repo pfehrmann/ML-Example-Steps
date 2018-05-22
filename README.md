@@ -4,7 +4,12 @@ This gives you the basic guidiance for what to do in the project. We have provid
 ## Step 0 - Setup
 Install Anaconda 3.6 Version for Windows. When installing, make sure to check the "Add Anaconda to my PATH environment variable" and "Register Anaconda as my default Python 3.6". Create a new environment with `conda create -n tensorflow pip python=3.6 `.
 
-Install Tensorflow with
+If you are using Windows, you can install Tensorflow with the following commands. First create and activate an environment for Tensorflow with 
+```
+conda create -n tensorflow pip python=3.6
+activate tensorflow
+```
+Conda environments are awesome, as they do not pollute your Python installation and you start from a clean environment. Then install Tensorflow with
 ```
 pip install --ignore-installed --upgrade tensorflow
 ```
