@@ -2,7 +2,7 @@
 This gives you the basic guidiance for what to do in the project. We have provided you with example projects for steps 3 to 5/6. Note that you will alyways have to do steps 0-2, to have your environment and data set up. Once you have setup your environment and data, feel free to copy the data to any downloaded project.
 
 ## Step 0 - Setup
-Install Anaconda 3.6 Version for Windows. When installing, make sure to check the "Add Anaconda to my PATH environment variable" and "Register Anaconda as my default Python 3.6". Create a new environment with `conda create -n tensorflow pip python=3.6 `.
+Download and install Anaconda 3.6 Version from [Anaconda](https://www.anaconda.com/download/). When installing under Windows, make sure to check the "Add Anaconda to my PATH environment variable" and "Register Anaconda as my default Python 3.6". You may have to logout and login again, to be able to use the ``conda`` command. As an alternative, you can use the Anaconda Propmpt for the following commands.
 
 If you are using Windows, you can install Tensorflow with the following commands. First create and activate an environment for Tensorflow with 
 ```
@@ -13,10 +13,29 @@ Conda environments are awesome, as they do not pollute your Python installation 
 ```
 pip install --ignore-installed --upgrade tensorflow
 ```
-See [Tensorflow](https://www.tensorflow.org/install/) for details.
-You also may want to install tensorflow-gpu, if you have a GPU. 
-In that case, make sure, that everything is running as it should.
+See [Tensorflow](https://www.tensorflow.org/install/) for details and for instructions on how to install Tensorflow on Ubuntu and Mac Os.
+You also may want to install tensorflow-gpu, if you have a GPU. In that case, make sure to install ``tensorflow-gpu`` and also install the needed CUDA drivers.
 
+Once you have installed Tensorflow, try to execute the following program:
+
+```python
+import tensorflow as tf
+
+data = tf.constant([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], dtype=tf.float32)
+data = tf.reshape(data, shape=[1, 2, 5, 1])
+pool = tf.layers.max_pooling2d(data, pool_size=[2, 2], strides=2, padding='same')
+
+sess = tf.Session()
+print(sess.run(pool))
+
+```
+
+Your output should be 
+```
+[[[[ 7.]
+   [ 9.]
+   [10.]]]]
+```
 
 You should use an IDE. I suggest using Pycharm, for me it is one of the best Python IDEs. To get the code either 
 - clone the project, so you have the latest and completed version or 
@@ -67,7 +86,7 @@ This step is crucial. If you mess up here, things will be slower and, depending 
 See [here](https://www.tensorflow.org/performance/performance_guide#input_pipeline_optimization) for some quick tips.
 
 ## Image input
-If you use the Tnesorflow Dataset API, you will have to take special care of your input images. 
+If you use the Tensorflow Dataset API, you will have to take special care of your input images. 
 Some images may have a different format, than others, so you might want to do some preprocessing here. 
 Maybe even external, to keep your code nice and clean.
 There will also be very bad examples of images in the pipeline. 
