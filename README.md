@@ -1,4 +1,4 @@
-# DL Tutorial
+# Machine Learning Tutorial
 This gives you the basic guidiance for what to do in the project. We have provided you with example projects for steps 3 to 5/6. Note that you will alyways have to do steps 0-2, to have your environment and data set up. Once you have setup your environment and data, feel free to copy the data to any downloaded project.
 
 ## Step 0 - Setup
