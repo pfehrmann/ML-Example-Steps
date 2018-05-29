@@ -108,6 +108,9 @@ In case your learning takes forever, consider a few points:
 - Is your net to huge? Having many Convolution Layers with large inputs will slow down things a lot. Also notice, that Tensorflow offers profiling tools, you might want to use them. There are many different architectures, that can cope with limited resources, e.g. SqueezeNet (this actually would run on a Raspberry Pi :) )
 - Use Cloud Computing. If your computers hardware simply is not powerful enough, consider using cloud services. Take a look at FloydHub (easy to setup, 20h of CPU time for free) or AWS
 
+## PyCharm
+Although it generally is great, the scientific mode that comes with it, may break your code. If you see an error like ``Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll.`` which disappears as soon as you run it in your console, you may want to disable the ``Show plots in tool window`` feature. See [here  for details](https://www.jetbrains.com/help/pycharm/matplotlib-support.html#sm).
+
 # Things to try
 Just a short list of things on my mind. Some relate to architecture others to preprocessing.
 - Spatial Pyramid Pooling
