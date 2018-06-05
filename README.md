@@ -106,7 +106,9 @@ This saves you from slow disk access.
 ## Long learning times
 In case your learning takes forever, consider a few points:
 - Is your net to huge? Having many Convolution Layers with large inputs will slow down things a lot. Also notice, that Tensorflow offers profiling tools, you might want to use them. There are many different architectures, that can cope with limited resources, e.g. SqueezeNet (this actually would run on a Raspberry Pi :) )
-- Use Cloud Computing. If your computers hardware simply is not powerful enough, consider using cloud services. Take a look at FloydHub (easy to setup, 20h of CPU time for free) or AWS
+- Use Cloud Computing. If your computers hardware simply is not powerful enough, consider using cloud services. Take a look at FloydHub (easy to setup, 20h of CPU time for free) or AWS. 
+
+Also make sure to check out [Google Colaboratory](https://colab.research.google.com/), here you can run your code in a python notebook. Also they will give you access to a good GPU (for free), so make sure to check that out. The only "problem" is, that you cannot run your training for too long (e.g. over night). Using it for a few hours should be good though. In case you have access to a VPN, please use it. We are not sure, how Google is going to react to a larger amount of people draining their resources, all connecting from the same IP...
 
 ## PyCharm
 Although it generally is great, the scientific mode that comes with it, may break your code. If you see an error like ``Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll.`` which disappears as soon as you run it in your console, you may want to disable the ``Show plots in tool window`` feature. See [here  for details](https://www.jetbrains.com/help/pycharm/matplotlib-support.html#sm).
