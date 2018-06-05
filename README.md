@@ -14,7 +14,7 @@ Conda environments are awesome, as they do not pollute your Python installation 
 pip install --ignore-installed --upgrade tensorflow
 ```
 See [Tensorflow](https://www.tensorflow.org/install/) for details and for instructions on how to install Tensorflow on Ubuntu and Mac Os.
-You also may want to install tensorflow-gpu, if you have a GPU. In that case, make sure to install ``tensorflow-gpu`` and also install the needed CUDA drivers.
+You also may want to install tensorflow-gpu, if you have a GPU. In that case, make sure to install ``tensorflow-gpu`` and also install the needed CUDA drivers. See the [Tensorflow website](https://www.tensorflow.org/install/) for details. Please also take a look at the [Problems you will encounter](#problems-you-will-encounter) section in this readme.
 
 Once you have installed Tensorflow, try to execute the following program:
 
@@ -110,6 +110,9 @@ In case your learning takes forever, consider a few points:
 
 ## PyCharm
 Although it generally is great, the scientific mode that comes with it, may break your code. If you see an error like ``Intel MKL FATAL ERROR: Cannot load mkl_intel_thread.dll.`` which disappears as soon as you run it in your console, you may want to disable the ``Show plots in tool window`` feature. See [here  for details](https://www.jetbrains.com/help/pycharm/matplotlib-support.html#sm).
+
+## CUDA / GPUs
+If you use a GPU and CUDA on Windows, make sure to install the correct versions of the individual components. When we last installed tensorflow-gpu, we installed CUDA Version 9.0, cuDNN v7.0. Also make sure to add cuDNN to your PATH variable. Details can be found (somewhere) on the Tensorflow installation page and the linked websites.
 
 # Things to try
 Just a short list of things on my mind. Some relate to architecture others to preprocessing.
