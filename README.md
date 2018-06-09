@@ -1,6 +1,9 @@
 # Machine Learning Tutorial
 This gives you the basic guidiance for what to do in the project. We have provided you with example projects for steps 3 to 5/6. Note that you will alyways have to do steps 0-2, to have your environment and data set up. Once you have setup your environment and data, feel free to copy the data to any downloaded project.
 
+# Presentation
+The presentation is available under [this link](https://github.com/pfehrmann/ML-Example-Steps/releases/download/step-6/OC.Expert.Camp.pdf).
+
 ## Step 0 - Setup
 Download and install Anaconda 3.6 Version from [Anaconda](https://www.anaconda.com/download/). When installing under Windows, make sure to check the "Add Anaconda to my PATH environment variable" and "Register Anaconda as my default Python 3.6". You may have to logout and login again, to be able to use the ``conda`` command. As an alternative, you can use the Anaconda Propmpt for the following commands.
 
